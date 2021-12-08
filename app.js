@@ -1,8 +1,8 @@
 const audio = document.getElementById('audio');
 
-const ninjaSound = document.getElementById('ninja-sound');
-ninjaSound.addEventListener('click', () => {
-    audio.src = 'assets/sounds/ninja.mp3';
+const ninjaSound = document.getElementById('car');
+carSound.addEventListener('click', () => {
+    audio.src = 'assets/sounds/car.mp3';
     audio.play(); 
 
 const princessSound = document.getElementById('princess-sound');
