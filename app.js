@@ -1,18 +1,28 @@
+import { characters } from './data.js';
+
+const template = document.getElementById('template');
+const characterList = document.getElementById('character-list');
 const audio = document.getElementById('audio');
 
-const carSound = document.getElementById('car');
-carSound.addEventListener('click', () => {
-  audio.src = 'assets/sounds/car.mp3';
-  audio.play(); 
-});
-const rocketSound = document.getElementById('rocket-sound');
-rocketSound.addEventListener('click', () => {
-  audio.src = 'assets/sounds/rocket.mp3';
-  audio.play();
-});
+// loop the array
+for (let character of characters) {
+  // for each character:
+  // make a copy of the template
+  const copy = template.content.cloneNode(true);
+  // find the h2, img, and button elements
+  const header = copy.querySelector('h2');
+  const image = copy.querySelector('img');
+  const button = copy.querySelector('button');
+  // set the h2.textContent and img.src
+  header.textContent = character.name;
+  image.src = character.image;
 
-const boatSound = document.getElementById('boat-sound');
-boatSound.addEventListener('click', () => {
-  audio.src = 'assets/sounds/boat.mp3';
-  audio.play();
-});
+  // subscribe to button click
+  button.addEventListener('click', () => {
+    audio.src = character.audio;
+    audio.play();
+  });
+
+  // add (append) the copy to the list (ul)
+  characterList.appendChild(copy);
+}
