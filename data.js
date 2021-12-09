@@ -3,11 +3,11 @@ export const characters = [{
   image: 'assets/avatars/car.webp',
   audio: 'assets/sounds/car.mp3',
 }, {
-  name: 'rocket',
+  name: 'Rocket',
   image: 'assets/avatars/rocket.webp',
   audio: 'assets/sounds/rocket.mp3'
 
-}, { name: 'boat',
+}, { name: 'Boat',
   image: 'assets/avatars/boat.webp',
   audio: 'assets/sounds/boat.mp3'
 }];
